@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth transitions for all interactive elements */
+button, a, input {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+/* Card hover animations */
+.card-hover {
+  @apply transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg;
+}
+
+/* Fade in animation */
+.fade-in {
+  @apply animate-[fadeIn_0.3s_ease-in-out];
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale animation */
+.scale-hover {
+  @apply transition-transform duration-200 hover:scale-105;
+}
+
+/* Pulse animation for notifications or important elements */
+.pulse {
+  @apply animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite];
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Slide in animation */
+.slide-in {
+  @apply animate-[slideIn_0.3s_ease-in-out];
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
